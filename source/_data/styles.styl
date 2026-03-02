@@ -41,14 +41,13 @@ h1, h2, h3, h4, h5, h6 {
   background: transparent !important;
 }
 
-// 品牌容器紫蓝渐变（Pisces中.site-brand-container默认使用var(--theme-color)黑色）
+// 品牌容器：隐藏顶部标题区（与侧边栏重复），保留导航切换和搜索按钮
 .site-brand-container {
   background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
-}
 
-// 去掉顶部重复的站点标题，仅保留左侧栏中的品牌信息
-.header .site-brand-container {
-  display: none !important;
+  .site-meta {
+    display: none !important;
+  }
 }
 
 .site-title {
