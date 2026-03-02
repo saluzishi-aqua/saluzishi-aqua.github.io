@@ -62,7 +62,7 @@ sidebar:
   position: left
   width_expanded: 320
   width_dual_column: 240
-  display: post
+  display: always
   padding: 18
   offset: 12
 
