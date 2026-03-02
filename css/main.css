@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #edff8f;
+    background: #4ee993;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2892,7 +2892,7 @@ h6 {
   margin: 0 0 8px 0 !important;
 }
 .header .menu .menu-item a {
-  color: #1f2937 !important;
+  color: #1e3a8a !important;
   font-size: 0.95em;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
@@ -2908,11 +2908,17 @@ h6 {
   border-color: transparent !important;
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
 }
+.header .menu .menu-item a i {
+  color: #1e3a8a !important;
+}
 .header .menu .menu-item.menu-item-active a {
-  color: #fff !important;
-  border-color: transparent !important;
+  color: #1e3a8a !important;
+  border-color: rgba(59,130,246,0.35) !important;
   font-weight: 600;
-  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+  background: rgba(59,130,246,0.12) !important;
+}
+.header .menu .menu-item.menu-item-active a i {
+  color: #1e3a8a !important;
 }
 .header .site-nav {
   background: transparent !important;
@@ -2941,16 +2947,19 @@ h6 {
     border-top: 1px solid rgba(139,69,19,0.15);
   }
   .header .menu .menu-item a {
-    color: #1f2937 !important;
+    color: #1e3a8a !important;
     background: transparent !important;
     border-color: rgba(139,69,19,0.15) !important;
     text-shadow: none !important;
   }
+  .header .menu .menu-item a i {
+    color: #1e3a8a !important;
+  }
   .header .menu .menu-item a:hover,
   .header .menu .menu-item.menu-item-active a {
-    color: #fff !important;
-    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
-    border-color: transparent !important;
+    color: #1e3a8a !important;
+    background: rgba(59,130,246,0.14) !important;
+    border-color: rgba(59,130,246,0.35) !important;
   }
 }
 .sidebar {
