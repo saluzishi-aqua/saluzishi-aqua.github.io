@@ -73,8 +73,8 @@ site_state: true
 
 # 社交链接
 social:
-  GitHub: https://github.com/yourname || fab fa-github
-  邮箱: mailto:yourname@gmail.com || fa fa-envelope
+  GitHub: https://github.com/saluzishi-aqua || fab fa-github
+  邮箱: mailto:saluzishi-aqua@gmail.com || fa fa-envelope
 
 social_icons:
   enable: true
