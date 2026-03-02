@@ -1,5 +1,5 @@
 # ===============================================================
-# 墨香轩 - 文人墨客风格配置
+# 墨香轩 - 文人墨客风格配置（多元主题拓展版）
 # ===============================================================
 
 # 主题核心配置
@@ -38,13 +38,16 @@ creative_commons:
   language: deed.zh
 
 # ---------------------------------------------------------------
-# 菜单设置 - 天文地理、生活风水
+# 菜单设置 - 多元主题：天文地理、生活风水、养生健康、术业学习、诗词歌赋
 # ---------------------------------------------------------------
 menu:
   首页: / || fa fa-home
   天文地理: /categories/天文地理/ || fa fa-star
   生活风水: /categories/生活风水/ || fa fa-yin-yang
+  养生健康: /categories/养生健康/ || fa fa-heartbeat
+  术业学习: /categories/术业学习/ || fa fa-graduation-cap
   诗词歌赋: /categories/诗词歌赋/ || fa fa-feather
+  标签: /tags/ || fa fa-tags
   归档: /archives/ || fa fa-archive
   关于: /about/ || fa fa-user
 
@@ -63,9 +66,9 @@ sidebar:
   padding: 18
   offset: 12
 
-# 头像
+# 头像 - 使用紫色圆形
 avatar:
-  url: /images/avatar.png
+  url: /images/avatar.svg
   rounded: true
   rotated: false
 
@@ -75,6 +78,7 @@ site_state: true
 social:
   GitHub: https://github.com/saluzishi-aqua || fab fa-github
   邮箱: mailto:saluzishi-aqua@gmail.com || fa fa-envelope
+  RSS: /atom.xml || fa fa-rss
 
 social_icons:
   enable: true
@@ -88,6 +92,8 @@ links_settings:
 
 links:
   中国传统文化网: https://www.zhongguoguzhi.com
+  中医养生网: https://www.zhongyiyangsheng.com
+  国学网: http://www.guoxue.com
 
 # 目录
 toc:
@@ -116,7 +122,7 @@ footer:
 # ---------------------------------------------------------------
 excerpt_description: true
 # 文章摘要长度
-excerpt_length: 200
+excerpt_length: 300
 # 显示"阅读全文"按钮
 read_more_btn: true
 
