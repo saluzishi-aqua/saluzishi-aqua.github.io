@@ -10,6 +10,7 @@ minify: false
 # 自定义文件路径
 custom_file_path:
   style: source/_data/styles.styl
+  bodyEnd: source/_data/body-end.njk
 
 # ---------------------------------------------------------------
 # 配色方案 - 使用Pisces营造古典书卷气息

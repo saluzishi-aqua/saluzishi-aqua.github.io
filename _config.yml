@@ -98,3 +98,10 @@ deploy:
   type: git
   repo: https://github.com/saluzishi-aqua/saluzishi-aqua.github.io.git
   branch: main
+
+# Search DB for NexT local search
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
