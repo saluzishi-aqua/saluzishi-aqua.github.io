@@ -35,6 +35,12 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
 }
 
+.header .site-nav,
+.header .site-meta,
+.header-inner {
+  background: transparent !important;
+}
+
 // 品牌容器紫蓝渐变（Pisces中.site-brand-container默认使用var(--theme-color)黑色）
 .site-brand-container {
   background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
@@ -172,10 +178,22 @@ h1, h2, h3, h4, h5, h6 {
 
   // 导航展开时才显示背景和内边距
   .sidebar-nav-active .sidebar-nav {
-    background: rgba(139, 69, 19, 0.05) !important;
+    background: rgba(139, 69, 19, 0.12) !important;
     border-radius: 10px;
+    border: 1px solid rgba(139, 69, 19, 0.15);
     padding: 8px;
     margin-bottom: 20px;
+  }
+
+  // 空TOC面板不占位，避免出现中间白块
+  .post-toc-wrap.sidebar-panel:empty {
+    display: none !important;
+  }
+
+  .sidebar-panel,
+  .sidebar-panel-container,
+  .post-toc-wrap {
+    background: transparent !important;
   }
 
   // 侧边栏链接 - 强制覆盖深色主题
