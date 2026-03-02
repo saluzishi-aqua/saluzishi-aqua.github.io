@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #61ffff;
+    background: #edff8f;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2885,29 +2885,57 @@ h6 {
   background: transparent;
   padding: 15px 0;
 }
+.header .menu {
+  padding: 8px 0;
+}
+.header .menu .menu-item {
+  margin: 0 0 8px 0 !important;
+}
 .header .menu .menu-item a {
-  color: rgba(255,255,255,0.9) !important;
+  color: #1f2937 !important;
   font-size: 0.95em;
   letter-spacing: 0.05em;
   transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
+  border: 1px solid rgba(139,69,19,0.15) !important;
+  border-bottom: 1px solid rgba(139,69,19,0.15) !important;
+  border-radius: 8px;
   padding: 8px 15px;
   font-weight: 500;
+  background: rgba(245,240,225,0.85);
 }
 .header .menu .menu-item a:hover {
   color: #fff !important;
-  border-bottom-color: rgba(255,255,255,0.8);
-  background-color: rgba(255,255,255,0.15);
-  border-radius: 4px;
+  border-color: transparent !important;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
 }
 .header .menu .menu-item.menu-item-active a {
   color: #fff !important;
-  border-bottom-color: #fff;
+  border-color: transparent !important;
   font-weight: 600;
-  background-color: rgba(255,255,255,0.2);
-  border-radius: 4px;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
 }
-@media (max-width: 767px) {
+.header .site-nav {
+  background: transparent !important;
+}
+@media (min-width: 992px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  .column > .sidebar {
+    order: 1;
+  }
+  .column > .header {
+    order: 2;
+    margin-top: 12px;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .column > .header .site-brand-container {
+    display: none !important;
+  }
+}
+@media (max-width: 991px) {
   .header .site-nav {
     background: rgba(245,240,225,0.96) !important;
     border-top: 1px solid rgba(139,69,19,0.15);
@@ -2915,14 +2943,14 @@ h6 {
   .header .menu .menu-item a {
     color: #1f2937 !important;
     background: transparent !important;
-    border-bottom-color: rgba(139,69,19,0.15) !important;
+    border-color: rgba(139,69,19,0.15) !important;
     text-shadow: none !important;
   }
   .header .menu .menu-item a:hover,
   .header .menu .menu-item.menu-item-active a {
     color: #fff !important;
     background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
-    border-bottom-color: transparent !important;
+    border-color: transparent !important;
   }
 }
 .sidebar {
