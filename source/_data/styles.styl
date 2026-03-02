@@ -125,20 +125,38 @@ h1, h2, h3, h4, h5, h6 {
   border-right: 1px solid rgba(139, 69, 19, 0.15) !important;
   color: $ink-black !important;
 
+  // 覆盖 Pisces 在 @media(min-width:992px) 设置的 --content-bg-color: white
   .sidebar-inner {
+    --content-bg-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
-    padding: 20px;
+    padding: 0 !important;
     color: $ink-black !important;
     justify-content: flex-start !important;
     align-items: stretch !important;
   }
 
-  // 侧边栏标题区域 - 作者头像区块用紫蓝渐变背景 (Pisces中品牌在header，用site-author顶替)
+  // 第二个 sidebar-inner (blogroll) 也去白
+  .sidebar-inner.sidebar-blogroll {
+    --content-bg-color: transparent !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 10px 20px !important;
+    margin-top: 0 !important;
+  }
+
+  // 面板容器：用 order:-1 把作者卡片移到功能栏上方
+  .sidebar-panel-container {
+    order: -1 !important;
+    background: transparent !important;
+    flex: none !important;
+  }
+
+  // 侧边栏标题区域 - 作者头像区块用紫蓝渐变背景
   .site-overview-wrap {
     .site-author {
       background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%);
-      margin: -20px -20px 20px -20px;
+      margin: 0;
       padding: 30px 20px;
       text-align: center;
       border-radius: 0;
@@ -155,8 +173,13 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // 侧边栏导航 - 仅在展开时显示（height:0时不能有padding否则背景会漏出）
+  // 侧边栏导航 - 功能栏（文章目录/站点概览）
   .sidebar-nav {
+    background: rgba(139, 69, 19, 0.08);
+    border-bottom: 1px solid rgba(139, 69, 19, 0.12);
+    padding: 6px 10px !important;
+    margin: 0;
+
     li {
       color: $ink-black !important;
       padding: 8px 10px;
@@ -180,24 +203,32 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // 导航展开时才显示背景和内边距
+  // 导航展开态额外样式
   .sidebar-nav-active .sidebar-nav {
     background: rgba(139, 69, 19, 0.12) !important;
     border-radius: 10px;
     border: 1px solid rgba(139, 69, 19, 0.15);
-    padding: 8px;
-    margin-bottom: 20px;
+    padding: 8px 10px !important;
+    margin: 10px 15px;
   }
 
-  // 空TOC面板不占位，避免出现中间白块
+  // 空TOC面板不占位
   .post-toc-wrap.sidebar-panel:empty {
     display: none !important;
   }
 
   .sidebar-panel,
-  .sidebar-panel-container,
   .post-toc-wrap {
     background: transparent !important;
+  }
+
+  // 站点概览面板内部各区块加内边距
+  .site-overview-wrap {
+    .site-state-wrap,
+    .links-of-author,
+    .cc-license {
+      padding: 0 20px;
+    }
   }
 
   // 侧边栏链接 - 强制覆盖深色主题
@@ -211,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // 侧边栏面板标题（仅对可见面板内的标题生效）
+  // 侧边栏面板标题
   .sidebar-panel-title {
     font-size: 1em;
     font-weight: 600;
@@ -222,10 +253,10 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-// 强制覆盖深色模式下的侧边栏样式
-.sidebar-active .sidebar,
+// 强制覆盖所有 .sidebar-inner 白色背景（Pisces 在 @media(min-width:992px) 用 var(--content-bg-color)）
 .sidebar .sidebar-inner {
-  background: linear-gradient(180deg, #F5F0E1 0%, #EDE4D3 100%) !important;
+  --content-bg-color: transparent !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
