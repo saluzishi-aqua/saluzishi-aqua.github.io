@@ -134,6 +134,8 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0 !important;
     padding: 0 !important;
     color: $ink-black !important;
+    display: flex !important;
+    flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: stretch !important;
   }
@@ -148,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
 
   // 面板容器：用 order:-1 把作者卡片移到功能栏上方
   .sidebar-panel-container {
-    order: -1 !important;
+    order: 1 !important;
     background: transparent !important;
     flex: none !important;
   }
@@ -177,6 +179,7 @@ h1, h2, h3, h4, h5, h6 {
   // 侧边栏导航 - 功能栏（文章目录/站点概览）
   // 基础主题设 height:0; visibility:hidden; overflow:hidden，必须全部覆盖
   .sidebar-nav {
+    order: 2 !important;
     height: auto !important;
     visibility: visible !important;
     overflow: visible !important;
@@ -205,8 +208,9 @@ h1, h2, h3, h4, h5, h6 {
   // 选中的导航项用紫蓝渐变（根据父级 .sidebar-overview-active / .sidebar-toc-active 判断）
   .sidebar-overview-active .sidebar-nav .sidebar-nav-overview,
   .sidebar-toc-active .sidebar-nav .sidebar-nav-toc {
-    color: #FFFFFF !important;
-    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+    color: $ink-black !important;
+    background: rgba(139, 92, 246, 0.20) !important;
+    border: 1px solid rgba(139, 92, 246, 0.35);
     font-weight: 600;
   }
 
