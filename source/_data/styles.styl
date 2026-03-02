@@ -8,6 +8,7 @@ $purple-primary = #8B5CF6
 $purple-dark = #6D28D9
 $blue-primary = #3B82F6
 $blue-dark = #1E40AF
+$nav-deep-blue = #1E3A8A
 $ink-black = #1F2937
 $paper-yellow = #F5F0E1
 $cinnabar-red = #C9372C
@@ -95,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 8px 0 !important;
 
     a {
-      color: $ink-black !important;
+      color: $nav-deep-blue !important;
       font-size: 0.95em;
       letter-spacing: 0.05em;
       transition: all 0.3s ease;
@@ -111,13 +112,21 @@ h1, h2, h3, h4, h5, h6 {
         border-color: transparent !important;
         background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
       }
+
+      i {
+        color: $nav-deep-blue !important;
+      }
     }
 
     &.menu-item-active a {
-      color: #FFFFFF !important;
-      border-color: transparent !important;
+      color: $nav-deep-blue !important;
+      border-color: rgba(59, 130, 246, 0.35) !important;
       font-weight: 600;
-      background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+      background: rgba(59, 130, 246, 0.12) !important;
+
+      i {
+        color: $nav-deep-blue !important;
+      }
     }
   }
 }
@@ -156,17 +165,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .header .menu .menu-item a {
-    color: $ink-black !important;
+    color: $nav-deep-blue !important;
     background: transparent !important;
     border-color: rgba(139, 69, 19, 0.15) !important;
     text-shadow: none !important;
+
+    i {
+      color: $nav-deep-blue !important;
+    }
   }
 
   .header .menu .menu-item a:hover,
   .header .menu .menu-item.menu-item-active a {
-    color: #FFFFFF !important;
-    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
-    border-color: transparent !important;
+    color: $nav-deep-blue !important;
+    background: rgba(59, 130, 246, 0.14) !important;
+    border-color: rgba(59, 130, 246, 0.35) !important;
   }
 }
 
