@@ -174,7 +174,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   // 侧边栏导航 - 功能栏（文章目录/站点概览）
+  // 基础主题设 height:0; visibility:hidden; overflow:hidden，必须全部覆盖
   .sidebar-nav {
+    height: auto !important;
+    visibility: visible !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
     background: rgba(139, 69, 19, 0.08);
     border-bottom: 1px solid rgba(139, 69, 19, 0.12);
     padding: 6px 10px !important;
