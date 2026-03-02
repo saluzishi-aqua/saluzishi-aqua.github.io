@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 // ===============================================================
 // 菜单样式 - 顶部导航
 // ===============================================================
-.menu {
+.header .menu {
   .menu-item {
     a {
       color: rgba(255,255,255,0.9) !important;
@@ -114,6 +114,28 @@ h1, h2, h3, h4, h5, h6 {
       background-color: rgba(255,255,255,0.2);
       border-radius: 4px;
     }
+  }
+}
+
+// 移动端：菜单展开时使用浅底深字，避免白底白字
+@media (max-width: 767px) {
+  .header .site-nav {
+    background: rgba(245, 240, 225, 0.96) !important;
+    border-top: 1px solid rgba(139, 69, 19, 0.15);
+  }
+
+  .header .menu .menu-item a {
+    color: $ink-black !important;
+    background: transparent !important;
+    border-bottom-color: rgba(139, 69, 19, 0.15) !important;
+    text-shadow: none !important;
+  }
+
+  .header .menu .menu-item a:hover,
+  .header .menu .menu-item.menu-item-active a {
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+    border-bottom-color: transparent !important;
   }
 }
 
