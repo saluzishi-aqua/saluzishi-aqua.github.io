@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffff57;
+    background: #6cd61a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2851,7 +2851,7 @@ h6 {
 .site-brand-container {
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
 }
-.header .site-brand-container {
+.site-brand-container .site-meta {
   display: none !important;
 }
 .site-title {
