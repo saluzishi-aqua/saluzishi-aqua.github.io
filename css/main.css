@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #81e886;
+    background: #ffa40b;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2920,6 +2920,8 @@ h6 {
   margin-top: 0 !important;
   padding: 0 !important;
   color: #1f2937 !important;
+  display: flex !important;
+  flex-direction: column !important;
   justify-content: flex-start !important;
   align-items: stretch !important;
 }
@@ -2930,7 +2932,7 @@ h6 {
   margin-top: 0 !important;
 }
 .sidebar .sidebar-panel-container {
-  order: -1 !important;
+  order: 1 !important;
   background: transparent !important;
   flex: none !important;
 }
@@ -2950,6 +2952,7 @@ h6 {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 .sidebar .sidebar-nav {
+  order: 2 !important;
   height: auto !important;
   visibility: visible !important;
   overflow: visible !important;
@@ -2973,8 +2976,9 @@ h6 {
 }
 .sidebar .sidebar-overview-active .sidebar-nav .sidebar-nav-overview,
 .sidebar .sidebar-toc-active .sidebar-nav .sidebar-nav-toc {
-  color: #fff !important;
-  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+  color: #1f2937 !important;
+  background: rgba(139,92,246,0.2) !important;
+  border: 1px solid rgba(139,92,246,0.35);
   font-weight: 600;
 }
 .sidebar .sidebar-nav-active .sidebar-nav {
