@@ -26,13 +26,14 @@
   }
 
   function initArchiveMeta() {
-    if (!document.body.classList.contains('archive')) return;
+    const archiveRoot = document.querySelector('.main-inner.archive.posts-collapse');
+    if (!archiveRoot) return;
 
     const data = window.__ARCHIVE_META__;
     if (!data || !Array.isArray(data.posts)) return;
 
     const postMap = new Map((data.posts || []).map(post => [normalizeRoute(post.url), post]));
-    const articles = document.querySelectorAll('.archive.posts-collapse article');
+    const articles = archiveRoot.querySelectorAll('article');
 
     articles.forEach(article => {
       if (article.querySelector('.archive-post-note')) return;
@@ -60,9 +61,7 @@
     });
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initArchiveMeta);
-  } else {
-    initArchiveMeta();
-  }
+  initArchiveMeta();
+  document.addEventListener('DOMContentLoaded', initArchiveMeta);
+  document.addEventListener('pjax:success', initArchiveMeta);
 })();
