@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #60038e;
+    background: #81e886;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2913,16 +2913,17 @@ h6 {
   color: #1f2937 !important;
 }
 .sidebar .sidebar-inner {
-  --content-bg-color: transparent !important;
+  --content-bg-color: transparent;
   background: transparent !important;
   box-shadow: none !important;
+  visibility: visible !important;
+  margin-top: 0 !important;
   padding: 0 !important;
   color: #1f2937 !important;
   justify-content: flex-start !important;
   align-items: stretch !important;
 }
 .sidebar .sidebar-inner.sidebar-blogroll {
-  --content-bg-color: transparent !important;
   background: transparent !important;
   box-shadow: none !important;
   padding: 10px 20px !important;
@@ -2964,13 +2965,14 @@ h6 {
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  background: transparent;
 }
 .sidebar .sidebar-nav li:hover {
   color: #fff !important;
   background: linear-gradient(135deg, rgba(139,92,246,0.85) 0%, rgba(59,130,246,0.85) 100%) !important;
 }
-.sidebar .sidebar-nav li.sidebar-nav-overview,
-.sidebar .sidebar-nav li.sidebar-nav-toc {
+.sidebar .sidebar-overview-active .sidebar-nav .sidebar-nav-overview,
+.sidebar .sidebar-toc-active .sidebar-nav .sidebar-nav-toc {
   color: #fff !important;
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
   font-weight: 600;
@@ -2982,8 +2984,11 @@ h6 {
   padding: 8px 10px !important;
   margin: 10px 15px;
 }
-.sidebar .post-toc-wrap.sidebar-panel:empty {
+.sidebar .post-toc-wrap {
   display: none !important;
+}
+.sidebar .sidebar-toc-active .post-toc-wrap {
+  display: block !important;
 }
 .sidebar .sidebar-panel,
 .sidebar .post-toc-wrap {
