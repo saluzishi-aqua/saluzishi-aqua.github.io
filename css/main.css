@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffa40b;
+    background: #61ffff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2885,7 +2885,7 @@ h6 {
   background: transparent;
   padding: 15px 0;
 }
-.menu .menu-item a {
+.header .menu .menu-item a {
   color: rgba(255,255,255,0.9) !important;
   font-size: 0.95em;
   letter-spacing: 0.05em;
@@ -2894,18 +2894,36 @@ h6 {
   padding: 8px 15px;
   font-weight: 500;
 }
-.menu .menu-item a:hover {
+.header .menu .menu-item a:hover {
   color: #fff !important;
   border-bottom-color: rgba(255,255,255,0.8);
   background-color: rgba(255,255,255,0.15);
   border-radius: 4px;
 }
-.menu .menu-item.menu-item-active a {
+.header .menu .menu-item.menu-item-active a {
   color: #fff !important;
   border-bottom-color: #fff;
   font-weight: 600;
   background-color: rgba(255,255,255,0.2);
   border-radius: 4px;
+}
+@media (max-width: 767px) {
+  .header .site-nav {
+    background: rgba(245,240,225,0.96) !important;
+    border-top: 1px solid rgba(139,69,19,0.15);
+  }
+  .header .menu .menu-item a {
+    color: #1f2937 !important;
+    background: transparent !important;
+    border-bottom-color: rgba(139,69,19,0.15) !important;
+    text-shadow: none !important;
+  }
+  .header .menu .menu-item a:hover,
+  .header .menu .menu-item.menu-item-active a {
+    color: #fff !important;
+    background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+    border-bottom-color: transparent !important;
+  }
 }
 .sidebar {
   background: linear-gradient(180deg, #f5f0e1 0%, #ede4d3 100%) !important;
