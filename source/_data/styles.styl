@@ -125,11 +125,13 @@ h1, h2, h3, h4, h5, h6 {
   border-right: 1px solid rgba(139, 69, 19, 0.15) !important;
   color: $ink-black !important;
 
-  // 覆盖 Pisces 在 @media(min-width:992px) 设置的 --content-bg-color: white
+  // 覆盖 Pisces @media(min-width:992px) 的 visibility:hidden + 白色背景
   .sidebar-inner {
-    --content-bg-color: transparent !important;
+    --content-bg-color: transparent;
     background: transparent !important;
     box-shadow: none !important;
+    visibility: visible !important;
+    margin-top: 0 !important;
     padding: 0 !important;
     color: $ink-black !important;
     justify-content: flex-start !important;
@@ -138,7 +140,6 @@ h1, h2, h3, h4, h5, h6 {
 
   // 第二个 sidebar-inner (blogroll) 也去白
   .sidebar-inner.sidebar-blogroll {
-    --content-bg-color: transparent !important;
     background: transparent !important;
     box-shadow: none !important;
     padding: 10px 20px !important;
@@ -191,21 +192,22 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
+      background: transparent;
 
       // 悬停时显示紫蓝渐变背景
       &:hover {
         color: #FFFFFF !important;
         background: linear-gradient(135deg, rgba(139, 92, 246, 0.85) 0%, rgba(59, 130, 246, 0.85) 100%) !important;
       }
-
-      // 选中状态为紫蓝渐变实心背景
-      &.sidebar-nav-overview,
-      &.sidebar-nav-toc {
-        color: #FFFFFF !important;
-        background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
-        font-weight: 600;
-      }
     }
+  }
+
+  // 选中的导航项用紫蓝渐变（根据父级 .sidebar-overview-active / .sidebar-toc-active 判断）
+  .sidebar-overview-active .sidebar-nav .sidebar-nav-overview,
+  .sidebar-toc-active .sidebar-nav .sidebar-nav-toc {
+    color: #FFFFFF !important;
+    background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+    font-weight: 600;
   }
 
   // 导航展开态额外样式
@@ -217,9 +219,13 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 15px;
   }
 
-  // 空TOC面板不占位
-  .post-toc-wrap.sidebar-panel:empty {
+  // TOC面板：在非文章页/无TOC时不占空间
+  .post-toc-wrap {
     display: none !important;
+  }
+  // 仅在TOC激活时显示
+  .sidebar-toc-active .post-toc-wrap {
+    display: block !important;
   }
 
   .sidebar-panel,
