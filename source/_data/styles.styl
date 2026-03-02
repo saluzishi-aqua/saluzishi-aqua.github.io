@@ -35,6 +35,11 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 20px rgba(139, 92, 246, 0.3);
 }
 
+// 品牌容器紫蓝渐变（Pisces中.site-brand-container默认使用var(--theme-color)黑色）
+.site-brand-container {
+  background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
+}
+
 .site-title {
   font-size: 2.4em;
   font-weight: 700;
@@ -140,16 +145,10 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // 侧边栏导航 - 符合设计要求
+  // 侧边栏导航 - 仅在展开时显示（height:0时不能有padding否则背景会漏出）
   .sidebar-nav {
-    background: rgba(139, 69, 19, 0.05) !important;
-    border-radius: 10px;
-    padding: 8px;
-    margin-bottom: 20px;
-
     li {
       color: $ink-black !important;
-      border-bottom: 1px solid rgba(139, 69, 19, 0.1);
       padding: 8px 10px;
       border-radius: 6px;
       cursor: pointer;
@@ -159,19 +158,24 @@ h1, h2, h3, h4, h5, h6 {
       &:hover {
         color: #FFFFFF !important;
         background: linear-gradient(135deg, rgba(139, 92, 246, 0.85) 0%, rgba(59, 130, 246, 0.85) 100%) !important;
-        border-bottom-color: transparent;
       }
 
       // 选中状态为紫蓝渐变实心背景
-      &.sidebar-nav-active,
       &.sidebar-nav-overview,
       &.sidebar-nav-toc {
         color: #FFFFFF !important;
         background: linear-gradient(135deg, #8B5CF6 0%, #3B82F6 100%) !important;
-        border-bottom-color: transparent;
         font-weight: 600;
       }
     }
+  }
+
+  // 导航展开时才显示背景和内边距
+  .sidebar-nav-active .sidebar-nav {
+    background: rgba(139, 69, 19, 0.05) !important;
+    border-radius: 10px;
+    padding: 8px;
+    margin-bottom: 20px;
   }
 
   // 侧边栏链接 - 强制覆盖深色主题
@@ -185,22 +189,14 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  // 侧边栏各个区块
-  .sidebar-panel {
-    background: rgba(255,255,255,0.6) !important;
-    border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(139, 69, 19, 0.1);
-
-    .sidebar-panel-title {
-      font-size: 1em;
-      font-weight: 600;
-      color: $ink-black !important;
-      border-bottom: 2px solid $purple-primary;
-      padding-bottom: 8px;
-      margin-bottom: 12px;
-    }
+  // 侧边栏面板标题（仅对可见面板内的标题生效）
+  .sidebar-panel-title {
+    font-size: 1em;
+    font-weight: 600;
+    color: $ink-black !important;
+    border-bottom: 2px solid $purple-primary;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
   }
 }
 
