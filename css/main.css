@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #6cd61a;
+    background: #ff1765;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2913,16 +2913,29 @@ h6 {
   color: #1f2937 !important;
 }
 .sidebar .sidebar-inner {
+  --content-bg-color: transparent !important;
   background: transparent !important;
   box-shadow: none !important;
-  padding: 20px;
+  padding: 0 !important;
   color: #1f2937 !important;
   justify-content: flex-start !important;
   align-items: stretch !important;
 }
+.sidebar .sidebar-inner.sidebar-blogroll {
+  --content-bg-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 10px 20px !important;
+  margin-top: 0 !important;
+}
+.sidebar .sidebar-panel-container {
+  order: -1 !important;
+  background: transparent !important;
+  flex: none !important;
+}
 .sidebar .site-overview-wrap .site-author {
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
-  margin: -20px -20px 20px -20px;
+  margin: 0;
   padding: 30px 20px;
   text-align: center;
   border-radius: 0;
@@ -2934,6 +2947,12 @@ h6 {
 .sidebar .site-overview-wrap .site-author .site-description {
   color: rgba(255,255,255,0.9) !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.sidebar .sidebar-nav {
+  background: rgba(139,69,19,0.08);
+  border-bottom: 1px solid rgba(139,69,19,0.12);
+  padding: 6px 10px !important;
+  margin: 0;
 }
 .sidebar .sidebar-nav li {
   color: #1f2937 !important;
@@ -2956,16 +2975,20 @@ h6 {
   background: rgba(139,69,19,0.12) !important;
   border-radius: 10px;
   border: 1px solid rgba(139,69,19,0.15);
-  padding: 8px;
-  margin-bottom: 20px;
+  padding: 8px 10px !important;
+  margin: 10px 15px;
 }
 .sidebar .post-toc-wrap.sidebar-panel:empty {
   display: none !important;
 }
 .sidebar .sidebar-panel,
-.sidebar .sidebar-panel-container,
 .sidebar .post-toc-wrap {
   background: transparent !important;
+}
+.sidebar .site-overview-wrap .site-state-wrap,
+.sidebar .site-overview-wrap .links-of-author,
+.sidebar .site-overview-wrap .cc-license {
+  padding: 0 20px;
 }
 .sidebar a {
   color: #8b5cf6 !important;
@@ -2983,9 +3006,9 @@ h6 {
   padding-bottom: 8px;
   margin-bottom: 12px;
 }
-.sidebar-active .sidebar,
 .sidebar .sidebar-inner {
-  background: linear-gradient(180deg, #f5f0e1 0%, #ede4d3 100%) !important;
+  --content-bg-color: transparent !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 .site-brand-container .site-subtitle,
