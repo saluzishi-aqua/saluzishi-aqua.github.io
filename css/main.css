@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #7fc1ff;
+    background: #18df4a;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2843,6 +2843,11 @@ h6 {
   border-bottom: none;
   box-shadow: 0 4px 20px rgba(139,92,246,0.3);
 }
+.header .site-nav,
+.header .site-meta,
+.header-inner {
+  background: transparent !important;
+}
 .site-brand-container {
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
 }
@@ -2945,10 +2950,19 @@ h6 {
   font-weight: 600;
 }
 .sidebar .sidebar-nav-active .sidebar-nav {
-  background: rgba(139,69,19,0.05) !important;
+  background: rgba(139,69,19,0.12) !important;
   border-radius: 10px;
+  border: 1px solid rgba(139,69,19,0.15);
   padding: 8px;
   margin-bottom: 20px;
+}
+.sidebar .post-toc-wrap.sidebar-panel:empty {
+  display: none !important;
+}
+.sidebar .sidebar-panel,
+.sidebar .sidebar-panel-container,
+.sidebar .post-toc-wrap {
+  background: transparent !important;
 }
 .sidebar a {
   color: #8b5cf6 !important;
