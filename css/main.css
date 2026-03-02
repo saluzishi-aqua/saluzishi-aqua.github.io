@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffd0cc;
+    background: #be83ff;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2906,6 +2906,8 @@ h6 {
   box-shadow: none !important;
   padding: 20px;
   color: #1f2937 !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
 }
 .sidebar .site-overview-wrap .site-author {
   background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
