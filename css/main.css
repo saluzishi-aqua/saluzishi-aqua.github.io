@@ -1317,7 +1317,7 @@ pre code {
     transition: all 0.2s ease-in-out;
   }
   .links-of-author a::before {
-    background: #ffff1d;
+    background: #ffd0cc;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -2903,53 +2903,51 @@ h6 {
 }
 .sidebar .sidebar-inner {
   background: transparent !important;
+  box-shadow: none !important;
   padding: 20px;
   color: #1f2937 !important;
 }
-.sidebar .site-brand-wrapper {
-  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+.sidebar .site-overview-wrap .site-author {
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
   margin: -20px -20px 20px -20px;
   padding: 30px 20px;
   text-align: center;
+  border-radius: 0;
 }
-.sidebar .site-brand-wrapper .site-title {
-  font-size: 1.6em;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.sidebar .site-overview-wrap .site-author .site-author-name {
   color: #fff !important;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  display: block;
-  margin-bottom: 8px;
 }
-.sidebar .site-brand-wrapper .site-subtitle {
-  font-size: 0.8em;
-  color: rgba(255,255,255,0.95) !important;
-  letter-spacing: 0.05em;
-  line-height: 1.5;
+.sidebar .site-overview-wrap .site-author .site-description {
+  color: rgba(255,255,255,0.9) !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-  white-space: nowrap;
 }
 .sidebar .sidebar-nav {
-  background: rgba(139,69,19,0.08) !important;
+  background: rgba(139,69,19,0.05) !important;
   border-radius: 10px;
-  padding: 15px;
+  padding: 8px;
   margin-bottom: 20px;
 }
 .sidebar .sidebar-nav li {
   color: #1f2937 !important;
   border-bottom: 1px solid rgba(139,69,19,0.1);
-  padding: 10px 0;
+  padding: 8px 10px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .sidebar .sidebar-nav li:hover {
-  color: #8b5cf6 !important;
+  color: #fff !important;
+  background: linear-gradient(135deg, rgba(139,92,246,0.85) 0%, rgba(59,130,246,0.85) 100%) !important;
+  border-bottom-color: transparent;
 }
 .sidebar .sidebar-nav li.sidebar-nav-active,
 .sidebar .sidebar-nav li.sidebar-nav-overview,
 .sidebar .sidebar-nav li.sidebar-nav-toc {
-  color: #8b5cf6 !important;
-  border-bottom-color: #8b5cf6;
+  color: #fff !important;
+  background: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%) !important;
+  border-bottom-color: transparent;
+  font-weight: 600;
 }
 .sidebar a {
   color: #8b5cf6 !important;
@@ -2975,9 +2973,15 @@ h6 {
   margin-bottom: 12px;
 }
 .sidebar-active .sidebar,
-.sidebar-active .sidebar-inner,
 .sidebar .sidebar-inner {
   background: linear-gradient(180deg, #f5f0e1 0%, #ede4d3 100%) !important;
+  box-shadow: none !important;
+}
+.site-brand-container .site-subtitle,
+.site-subtitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 991px) {
   .sidebar {
