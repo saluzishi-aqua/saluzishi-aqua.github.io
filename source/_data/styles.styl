@@ -1,0 +1,405 @@
+// ===============================================================
+// 墨香轩 - 文人墨客风格样式
+// 配色：宣纸黄、墨黑、朱砂红
+// ===============================================================
+
+// 色彩定义 - 传统中国色
+$ink-black = #2C2C2C           // 墨黑
+$paper-yellow = #F5F0E1        // 宣纸黄
+$cinnabar-red = #C9372C        // 朱砂红
+$ink-gray = #5A5A5A            // 淡墨
+$old-paper = #F7F3E9           // 古纸色
+$bamboo-green = #7B8B6F        // 竹青
+$gold = #B8860B                // 赭石
+
+// 全局背景 - 宣纸纹理感
+body {
+  background-color: $old-paper;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.1) 0%,
+    rgba(245,240,225,0.3) 100%
+  );
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'SimSun', 'STSong', serif;
+}
+
+// 标题字体 - 书法感
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif SC', 'Source Han Serif SC', 'SimHei', serif;
+  font-weight: 600;
+  color: $ink-black;
+}
+
+// 站点标题
+.site-title {
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: $ink-black;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
+  &:hover {
+    color: $cinnabar-red;
+  }
+}
+
+.site-subtitle {
+  font-size: 1em;
+  color: $ink-gray;
+  letter-spacing: 0.15em;
+  font-style: italic;
+}
+
+// 侧边栏样式
+.sidebar {
+  background-color: rgba(247, 243, 233, 0.95);
+  border-right: 1px solid rgba(139, 69, 19, 0.1);
+
+  .sidebar-inner {
+    background-color: transparent;
+  }
+}
+
+// 头像样式
+.site-author-image {
+  border: 3px solid $paper-yellow;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+}
+
+.site-author-name {
+  color: $ink-black;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.site-description {
+  color: $ink-gray;
+  font-size: 0.9em;
+}
+
+// 菜单样式
+.menu {
+  .menu-item {
+    a {
+      color: $ink-gray;
+      font-size: 0.95em;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+
+      &:hover {
+        color: $cinnabar-red;
+        border-bottom-color: $cinnabar-red;
+        background-color: transparent;
+      }
+    }
+
+    &.menu-item-active a {
+      color: $cinnabar-red;
+      border-bottom-color: $cinnabar-red;
+      font-weight: 600;
+    }
+  }
+}
+
+// 文章卡片
+.post-block {
+  background-color: $paper-yellow;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  border: 1px solid rgba(139, 69, 19, 0.1);
+  margin-bottom: 30px;
+  padding: 40px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+}
+
+// 文章标题
+.post-title {
+  font-size: 1.8em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+
+  a {
+    color: $ink-black;
+    background: linear-gradient(to bottom, transparent 60%, rgba(201, 55, 44, 0.15) 60%);
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $cinnabar-red;
+      background: linear-gradient(to bottom, transparent 60%, rgba(201, 55, 44, 0.3) 60%);
+    }
+  }
+}
+
+// 文章元信息
+.post-meta {
+  color: $ink-gray;
+  font-size: 0.85em;
+
+  .post-meta-item-icon {
+    color: $bamboo-green;
+  }
+}
+
+// 文章内容
+.post-body {
+  color: $ink-black;
+  line-height: 1.8;
+  font-size: 1.05em;
+  text-align: justify;
+
+  p {
+    margin-bottom: 1.5em;
+    text-indent: 2em;
+  }
+
+  // 引用块 - 古籍引用样式
+  blockquote {
+    background-color: rgba(184, 134, 11, 0.1);
+    border-left: 4px solid $cinnabar-red;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: $ink-gray;
+
+    p {
+      text-indent: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // 链接样式
+  a {
+    color: $cinnabar-red;
+    border-bottom: 1px dashed $cinnabar-red;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: darken($cinnabar-red, 15%);
+      border-bottom-style: solid;
+    }
+  }
+
+  // 图片样式 - 画卷感
+  img {
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border: 8px solid $paper-yellow;
+    background-color: $paper-yellow;
+  }
+
+  // 水平线 - 水墨分隔
+  hr {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, $ink-gray, transparent);
+    margin: 2em 0;
+  }
+
+  // 表格样式
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+
+    th, td {
+      border: 1px solid rgba(139, 69, 19, 0.3);
+      padding: 10px 15px;
+    }
+
+    th {
+      background-color: rgba(184, 134, 11, 0.1);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(245, 240, 225, 0.5);
+    }
+  }
+}
+
+// 阅读全文按钮
+.post-button {
+  .btn {
+    background-color: transparent;
+    color: $cinnabar-red;
+    border: 1px solid $cinnabar-red;
+    border-radius: 20px;
+    padding: 8px 25px;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $cinnabar-red;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(201, 55, 44, 0.3);
+    }
+  }
+}
+
+// 分页样式
+.pagination {
+  .page-number {
+    background-color: $paper-yellow;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    color: $ink-gray;
+
+    &:hover {
+      background-color: $cinnabar-red;
+      color: white;
+      border-color: $cinnabar-red;
+    }
+
+    &.current {
+      background-color: $cinnabar-red;
+      color: white;
+      border-color: $cinnabar-red;
+    }
+  }
+
+  .prev, .next {
+    background-color: $paper-yellow;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    color: $ink-gray;
+
+    &:hover {
+      background-color: $cinnabar-red;
+      color: white;
+    }
+  }
+}
+
+// 页脚
+.footer {
+  background-color: rgba(44, 44, 44, 0.95);
+  color: $paper-yellow;
+
+  a {
+    color: $gold;
+
+    &:hover {
+      color: $cinnabar-red;
+    }
+  }
+}
+
+// 返回顶部
+.back-to-top {
+  background-color: $cinnabar-red;
+  color: white;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: darken($cinnabar-red, 10%);
+  }
+}
+
+// 标签云
+tags {
+  .tag-cloud-tags a {
+    background-color: $paper-yellow;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+    color: $ink-gray;
+    border-radius: 15px;
+    padding: 3px 12px;
+    margin: 3px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $cinnabar-red;
+      color: white;
+      border-color: $cinnabar-red;
+    }
+  }
+}
+
+// 分类页面
+category-all-page {
+  .category-list-item {
+    background-color: $paper-yellow;
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-left: 4px solid $bamboo-green;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateX(5px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+// 代码块 - 古籍样式
+code {
+  background-color: rgba(184, 134, 11, 0.1);
+  color: $cinnabar-red;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Noto Sans SC', monospace;
+}
+
+pre {
+  background-color: #f8f6f0;
+  border: 1px solid rgba(139, 69, 19, 0.2);
+  border-radius: 6px;
+  padding: 15px;
+  overflow-x: auto;
+
+  code {
+    background-color: transparent;
+    color: $ink-black;
+  }
+}
+
+// 搜索框
+.search-popup {
+  background-color: $paper-yellow;
+
+  .search-input {
+    background-color: white;
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    color: $ink-black;
+
+    &:focus {
+      border-color: $cinnabar-red;
+    }
+  }
+}
+
+// 选中文字样式
+::selection {
+  background-color: rgba(201, 55, 44, 0.2);
+  color: $ink-black;
+}
+
+// 滚动条
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $old-paper;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(139, 69, 19, 0.3);
+  border-radius: 4px;
+
+  &:hover {
+    background-color: rgba(139, 69, 19, 0.5);
+  }
+}
