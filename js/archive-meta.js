@@ -2,11 +2,20 @@
 
 (function () {
   function normalizeRoute(value) {
-    return decodeURIComponent(String(value || ''))
-      .replace(/^https?:\/\/[^/]+/i, '')
-      .replace(/index\.html$/i, '')
-      .replace(/\/+$/, '')
-      .replace(/^$/, '/');
+    const input = String(value || '');
+    try {
+      return decodeURIComponent(input)
+        .replace(/^https?:\/\/[^/]+/i, '')
+        .replace(/index\.html$/i, '')
+        .replace(/\/+$/, '')
+        .replace(/^$/, '/');
+    } catch {
+      return input
+        .replace(/^https?:\/\/[^/]+/i, '')
+        .replace(/index\.html$/i, '')
+        .replace(/\/+$/, '')
+        .replace(/^$/, '/');
+    }
   }
 
   function createNoteItem(className, icon, text) {
@@ -18,41 +27,37 @@
 
   function initArchiveMeta() {
     if (!document.body.classList.contains('archive')) return;
-    var root = (window.CONFIG && window.CONFIG.root) || '/';
-    if (!root.endsWith('/')) root += '/';
 
-    fetch(root + 'archives-meta.json')
-      .then(res => res.ok ? res.json() : Promise.reject(new Error('No archives meta')))
-      .then(data => {
-        const postMap = new Map((data.posts || []).map(post => [normalizeRoute(post.url), post]));
-        const articles = document.querySelectorAll('.archive.posts-collapse article');
+    const data = window.__ARCHIVE_META__;
+    if (!data || !Array.isArray(data.posts)) return;
 
-        articles.forEach(article => {
-          if (article.querySelector('.archive-post-note')) return;
+    const postMap = new Map((data.posts || []).map(post => [normalizeRoute(post.url), post]));
+    const articles = document.querySelectorAll('.archive.posts-collapse article');
 
-          const link = article.querySelector('.post-title-link');
-          if (!link) return;
+    articles.forEach(article => {
+      if (article.querySelector('.archive-post-note')) return;
 
-          const post = postMap.get(normalizeRoute(link.getAttribute('href')));
-          if (!post) return;
+      const link = article.querySelector('.post-title-link');
+      if (!link) return;
 
-          const container = document.createElement('div');
-          container.className = 'archive-post-note';
+      const post = postMap.get(normalizeRoute(link.getAttribute('href')));
+      if (!post) return;
 
-          const categoriesText = `分类：${post.categories && post.categories.length ? post.categories.join(' / ') : '未分类'}`;
-          const tagsText = `标签：${post.tags && post.tags.length ? post.tags.join(' · ') : '无标签'}`;
-          container.appendChild(createNoteItem('archive-note-category', 'fa-folder-open-o', categoriesText));
-          container.appendChild(createNoteItem('archive-note-tag', 'fa-tags', tagsText));
+      const categoriesText = `Category: ${post.categories && post.categories.length ? post.categories.join(' / ') : 'None'}`;
+      const tagsText = `Tags: ${post.tags && post.tags.length ? post.tags.join(' · ') : 'None'}`;
 
-          if (post.summary) {
-            container.appendChild(createNoteItem('archive-note-summary', 'fa-commenting-o', post.summary));
-          }
+      const container = document.createElement('div');
+      container.className = 'archive-post-note';
+      container.appendChild(createNoteItem('archive-note-category', 'fa-folder-open-o', categoriesText));
+      container.appendChild(createNoteItem('archive-note-tag', 'fa-tags', tagsText));
 
-          const header = article.querySelector('.post-header');
-          if (header) header.appendChild(container);
-        });
-      })
-      .catch(() => {});
+      if (post.summary) {
+        container.appendChild(createNoteItem('archive-note-summary', 'fa-commenting-o', post.summary));
+      }
+
+      const header = article.querySelector('.post-header');
+      if (header) header.appendChild(container);
+    });
   }
 
   if (document.readyState === 'loading') {
