@@ -31,8 +31,11 @@ hexo.extend.generator.register('archives-meta', locals => {
     };
   });
 
-  return {
+  return [{
     path: 'archives-meta.json',
     data: JSON.stringify({ posts }, null, 2)
-  };
+  }, {
+    path: 'js/archives-meta.js',
+    data: `window.__ARCHIVE_META__ = ${JSON.stringify({ posts })};`
+  }];
 });
